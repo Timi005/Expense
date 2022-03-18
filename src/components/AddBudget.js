@@ -16,6 +16,8 @@ const AddBudgetForm = () => {
 			payload: Budget,
 		});
 
+		setBudget('');
+
 
 	};
 
@@ -29,6 +31,7 @@ const AddBudgetForm = () => {
 						type='text'
 						className='form-control'
 						id='name'
+						value = {budget}
                         onChange={(event) =>setBudget(event.target.value)}
 					></input>
 				</div>

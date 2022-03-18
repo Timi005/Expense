@@ -10,7 +10,7 @@ const AddExpenseForm = () => {
     const onSubmit = (event) => {
 		event.preventDefault();
 
-		const expense = {
+		let expense = {
 			id: uuidv4(),
 			name: name,
 			cost: parseInt(cost),
@@ -20,6 +20,12 @@ const AddExpenseForm = () => {
 			type: 'ADD_EXPENSE',
 			payload: expense,
 		});
+
+		console.log(expense);
+
+		setName("");
+		setCost("");
+
 
 
 	};
@@ -34,6 +40,7 @@ const AddExpenseForm = () => {
 						type='text'
 						className='form-control'
 						id='name'
+						value={name}
                         onChange={(event) =>setName(event.target.value)}
 					></input>
 				</div>
@@ -44,6 +51,7 @@ const AddExpenseForm = () => {
 						type='text'
 						className='form-control'
 						id='cost'
+						value={cost}
                         onChange={(event) =>setCost(event.target.value)}
 					></input>
 				</div>
